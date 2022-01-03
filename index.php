@@ -2,14 +2,7 @@
 $theme = "light";
 $title = "RSS reader";
 $footer = "I really 🧡 <a href='https://www.paypal.com/paypalme/dmpop'>coffee</a>";
-$feeds = array(
-	"https://tokyoma.de/rss.xml",
-	"http://dpreview.com/feeds/news/latest",
-	"https://www.tomshardware.com/feeds/all",
-	"https://changelog.com/feed/",
-	"https://blog.linuxmint.com/?feed=rss2",
-	"https://www.omgubuntu.co.uk/feed"
-);
+$file = "feeds.txt";
 ?>
 
 <!DOCTYPE html>
@@ -41,10 +34,11 @@ $feeds = array(
 		</div>
 		<hr style="margin-bottom: 2em;">
 		<?php
+		$feeds = file($file);
 		$array_length = count($feeds);
 		for ($i = 0; $i < $array_length; $i++) {
 			echo "<details>";
-			$rss = simplexml_load_file($feeds[$i]);
+			$rss = simplexml_load_file(str_replace(PHP_EOL, "", $feeds[$i]));
 			echo '<summary>' . $rss->channel->title . '</summary>';
 			echo "<ul>";
 			foreach ($rss->channel->item as $item) {
@@ -54,9 +48,9 @@ $feeds = array(
 			echo "</details>";
 		}
 		?>
-	</div>
-	<div class="text-center">
-		<?php echo $footer; ?>
+		<div style="margin-bottom: 1em;">
+			<?php echo $footer; ?>
+		</div>
 	</div>
 </body>
 

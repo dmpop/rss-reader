@@ -1,0 +1,6 @@
+https://tokyoma.de/rss.xml
+http://dpreview.com/feeds/news/latest
+https://www.tomshardware.com/feeds/all
+https://changelog.com/feed/
+https://blog.linuxmint.com/?feed=rss2
+https://www.omgubuntu.co.uk/feed
