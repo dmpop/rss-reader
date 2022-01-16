@@ -4,3 +4,5 @@ https://www.tomshardware.com/feeds/all
 https://changelog.com/feed/
 https://blog.linuxmint.com/?feed=rss2
 https://www.omgubuntu.co.uk/feed
+http://feeds.kottke.org/main
+https://www.theverge.com/rss/index.xml
