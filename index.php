@@ -34,7 +34,7 @@ $feed_cache_expire = 900; // 15 minutes
 			<img style="display: inline; height: 2.5em; vertical-align: middle;" src="favicon.svg" alt="logo" />
 			<h1 style="display: inline; margin-top: 0em; vertical-align: middle; letter-spacing: 3px;"><?php echo $title; ?></h1>
 		</div>
-		<hr style="margin-bottom: 2em;">
+		<hr style="margin-bottom: 1em;">
 		<?php
 		$refresh = time() - $feed_cache_expire;
 		$feeds = file($file);
@@ -62,11 +62,13 @@ $feed_cache_expire = 900; // 15 minutes
 				file_put_contents($feed_cache, $content);
 			}
 			echo $content;
+			echo "<span style='color:gray; font-size: 85%;'>Last updated: </span>" . date("H:i:s", filemtime($feed_cache));
 		} else {
 			echo file_get_contents($feed_cache);
+			echo "<span style='color:gray; font-size: 85%;'>Last updated: </span>" . date("H:i:s", filemtime($feed_cache));
 		}
 		?>
-		<div style="margin-bottom: 1em;">
+		<div style="margin-top:1em; margin-bottom: 1em;">
 			<?php echo $footer; ?>
 		</div>
 	</div>
