@@ -3,7 +3,7 @@ $theme = "dark";
 $title = "RSS reader";
 $footer = "Read the <a href='https://dmpop.gumroad.com/l/php-right-away'>PHP Right Away</a> book";
 $file = "feeds.txt";
-$feed_cache = __DIR__ . '/feed_cache.html';
+$feed_cache = "feed_cache.html";
 $feed_cache_expire = 900; // 15 minutes
 ?>
 
